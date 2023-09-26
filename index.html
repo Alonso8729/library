@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js"></script>
+</head>
+
+<body>
+  <div class="side">
+    <div class="logo">
+      <img src="images/books.png" alt="books logo">
+      <h1 class="title">Library</h1>
+    </div>
+    <form method="get">
+      <div class="form-item text">
+        <input type="text" autocomplete="off" name="book-title" id="book-title"
+          placeholder="What is the title of the book?" required>
+      </div>
+      <div class="form-item text">
+        <input type="text" autocomplete="off" name="book-author" id="book-author"
+          placeholder="Who is the author of the book?" required>
+      </div>
+      <div class="form-item text">
+        <input type="text" autocomplete="off" name="page-num" id="page-num"
+          placeholder="How many pages are in the book?" required>
+      </div>
+      <div class="form-item checkbox">
+        <span>
+          <input type="checkbox" id="check">
+        </span>
+        <span class="check-span">I have already read the book!</span>
+      </div>
+      <div class="form-item button">
+        <button value="ADD A NEW BOOK" id="add-book">ADD A NEW BOOK</button>
+      </div>
+    </form>
+  </div>
+  <div class="main">
+
+  </div>
+</body>
+
+</html>
