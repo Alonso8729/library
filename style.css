@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&family=Roboto&display=swap');
+
+:root {
+    --grey-bg: #d0d3da;
+    --transperent: rgba(0, 0, 0, 0.2);
+    --transperent2: rgba(0, 0, 0, 0.5);
+    --orange-bg: #f46036;
+    font-family: 'Montserrat', sans-serif;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+/*side*/
+.side {
+    width: 25vw;
+    height: 100vh;
+    background-image: url('images/library.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+}
+
+.side img {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    margin-right: 10em;
+}
+
+.side .logo {
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    justify-content: baseline;
+    margin-right: 1.3rem;
+    color: rgb(235, 231, 229);
+}
+
+.side h1 {
+    margin-left: 1.5em;
+    font-size: 3rem;
+}
+
+form {
+    background-color: rgba(0, 0, 0, 0);
+    /* Adjust the opacity as needed */
+    padding: 0 2rem 0 2rem;
+    /* Add rounded corners */
+    display: flex;
+    flex-direction: column;
+    color: white;
+    gap: 2rem;
+}
+
+.form-item text input:valid+span.placeholder,
+.form-item text input:focus+span.placeholder {
+    transform: scale(0.8) translateY(-30px);
+}
+
+.form-item input {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    width: 100%;
+    border-bottom: 2px dotted rgb(135, 134, 134);
+}
+
+input[type="text"] {
+    color: white;
+}
+
+.check-span {
+    font-size: 0.8rem;
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-bottom: 2px dotted white;
+}
+
+.form-item.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+
+input[type="checkbox"] {
+    accent-color: var(--orange-bg);
+}
+
+input[type="text"]::placeholder {
+    color: var(--grey-bg);
+}
+
+#add-book {
+    background-color: var(--transperent);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    color: white;
+    cursor: pointer;
+    border: 2px solid white;
+    font-weight: 500;
+    transition: 0.3s;
+
+}
+
+#add-book:hover {
+    background-color: var(--transperent2);
+}
+
+/*main*/
+
+.main {
+    width: 75vw;
+    background-color: var(--grey-bg);
+}
