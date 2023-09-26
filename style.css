@@ -1,10 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&family=Open+Sans&family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;500&family=Open+Sans&family=Roboto&display=swap');
 
 :root {
-    --grey-bg: #d0d3da;
+    --grey-bg: #e8eaee;
     --transperent: rgba(0, 0, 0, 0.2);
     --transperent2: rgba(0, 0, 0, 0.5);
-    --orange-bg: #f46036;
+    --red-bg: rgba(217, 12, 39, 0.85);
+    --red-bg2: rgba(217, 12, 39, 1);
+    --blue-bg: #2e294e;
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -14,7 +16,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: inherit;
+    font-size: 1.2rem;
+    font-family: inherit;
+}
 
+body {
+    background-color: var(--grey-bg);
+    display: flex;
 }
 
 /*side*/
@@ -36,7 +45,6 @@
 }
 
 .side .logo {
-    color: white;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -49,6 +57,7 @@
 .side h1 {
     margin-left: 1.5em;
     font-size: 3rem;
+    color: var(--grey-bg);
 }
 
 form {
@@ -59,7 +68,8 @@ form {
     display: flex;
     flex-direction: column;
     color: white;
-    gap: 2rem;
+    gap: 3rem;
+    margin-top: 2rem;
 }
 
 .form-item text input:valid+span.placeholder,
@@ -71,31 +81,31 @@ form {
     background-color: rgba(0, 0, 0, 0);
     border: none;
     width: 100%;
-    border-bottom: 2px dotted rgb(135, 134, 134);
+    border-bottom: 3px dotted rgb(135, 134, 134);
 }
 
 input[type="text"] {
     color: white;
 }
 
-.check-span {
-    font-size: 0.8rem;
-}
+
 
 input[type="text"]:focus {
     outline: none;
-    border-bottom: 2px dotted white;
+    border-bottom: 3px dotted white;
 }
 
 .form-item.checkbox {
     display: flex;
     align-items: center;
     gap: 0.3rem;
+    display: flex;
+
 }
 
 
 input[type="checkbox"] {
-    accent-color: var(--orange-bg);
+    accent-color: var(--blue-bg);
 }
 
 input[type="text"]::placeholder {
@@ -108,7 +118,7 @@ input[type="text"]::placeholder {
     padding: 0.5rem 1rem;
     color: white;
     cursor: pointer;
-    border: 2px solid white;
+    border: 2px solid var(--grey-bg);
     font-weight: 500;
     transition: 0.3s;
 
@@ -120,7 +130,71 @@ input[type="text"]::placeholder {
 
 /*main*/
 
-.main {
+main {
     width: 75vw;
+    padding: 2rem;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 8rem;
+}
+
+header button {
+    background-color: var(--red-bg);
+    color: var(--grey-bg);
+    border: none;
+    position: relative;
+    bottom: 9px;
+    padding: 0.5rem 0.8rem;
+    display: flex;
+    align-self: center;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background-color: var(--red-bg2);
+}
+
+table {
+    width: 85%;
+}
+
+tr {
+    background-color: var(--blue-bg);
+    display: flex;
+    color: var(--grey-bg);
+    justify-content: space-around;
+    padding: 8px 10px;
+    margin-left: 9rem;
+}
+
+td {
+    flex-basis: 20%;
+    /* Adjust the width as needed to fit your content */
+    padding: 8px 10px;
+}
+
+tbody tr {
     background-color: var(--grey-bg);
+    color: var(--blue-bg);
+    border-bottom: 3px dotted var(--blue-bg);
+}
+
+tbody button {
+    border: none;
+    cursor: pointer;
+    margin-left: 1rem;
+}
+
+#remove {
+    margin-left: 2rem;
 }
