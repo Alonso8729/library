@@ -15,6 +15,41 @@ function addToLibrary(name, author, pages, status) {
 
 function showLibrary() {
     showLibraryData();
+    const bookTable = document.querySelector('#table-body');
+    bookTable.textContent = "";
+    for (let i = 0; i < myLibrary.length; i++) {
+        const bookRow = document.createElement('tr');
+        bookRow.classList.add('book-list');
+        bookTable.appendChild(bookRow);
+        //TITLE
+        const title = document.createElement('td');
+        title.textContent = myLibrary[i].name;
+        bookRow.appendChild(title);
+        //AUTHOR
+        const author = document.createElement('td');
+        author.textContent = myLibrary[i].author;
+        bookRow.appendChild(author);
+        //PAGES
+        const pages = document.createElement('td');
+        pages.textContent = myLibrary[i].pages;
+        bookRow.appendChild(pages);
+        //STATUS
+        const status = document.createElement('td');
+        const statusIcon = document.createElement('i');
+        if (myLibrary[i].status === true)
+            statusIcon.classList.add('fa-solid', 'fa-check');
+        else if (myLibrary[i].status === false)
+            statusIcon.classList.add('fa-solid', 'fa-times');
+        status.appendChild(statusIcon);
+        bookRow.appendChild(status);
+        //REMOVE ICON
+        const remove = document.createElement('td');
+        const removeIcon = document.createElement('i');
+        removeIcon.classList.add('fa-solid', 'fa-trash');
+        remove.appendChild(removeIcon);
+        bookRow.appendChild(remove);
+
+    }
 }
 
 function showLibraryData() {
@@ -79,12 +114,14 @@ function validate(event) {
 }
 
 function handleClicks() {
+    const addBook = document.getElementById('add-book');
+    addBook.addEventListener('click', (event) => {
+        validate(event);
+    })
     document.addEventListener('click', (event) => {
         const { target } = event;
         const tr = target.parentNode.parentNode.rowIndex - 1;
-        if (target.id === 'add-book')
-            validate(event);
-        else if (target.id === 'delete-all')
+        if (target.id === 'delete-all')
             handleModal();
         else if (target.classList.contains('fa-trash'))
             myLibrary.splice(tr, 1);
