@@ -9,6 +9,8 @@
     --red-bg2: rgba(217, 12, 39, 1);
     --blue-bg: #2e294e;
     --orange-bg: rgb(236, 155, 4);
+    --green-bg: rgba(34, 197, 94, 0.85);
+    --green-bg: rgba(34, 197, 94, 1);
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -136,12 +138,9 @@ input[type="text"]::placeholder {
 
 /*main*/
 
-main {
+.container {
     width: 75vw;
     padding: 2rem;
-}
-
-.container {
     display: flex;
     flex-direction: column;
 }
@@ -170,40 +169,6 @@ main {
     background-color: var(--red-bg2);
 }
 
-table {
-    width: 85%;
-}
-
-tr {
-    background-color: var(--blue-bg);
-    display: flex;
-    color: var(--grey-bg);
-    justify-content: space-around;
-    padding: 8px 10px;
-    margin-left: 9rem;
-}
-
-td {
-    flex-basis: 20%;
-    /* Adjust the width as needed to fit your content */
-    padding: 8px 10px;
-}
-
-tbody tr {
-    background-color: var(--grey-bg);
-    color: var(--blue-bg);
-    border-bottom: 3px dotted var(--blue-bg);
-}
-
-tbody button {
-    border: none;
-    cursor: pointer;
-    margin-left: 1rem;
-}
-
-#remove {
-    margin-left: 2rem;
-}
 
 /*Modal*/
 #modal {
@@ -279,4 +244,85 @@ tbody button {
 
 #confirm:hover {
     background-color: var(--red-bg2);
+}
+
+/*TABLE*/
+/*
+.book-list {
+    background-color: var(--grey-bg);
+    color: var(--blue-bg);
+    border-bottom: 3px dotted var(--blue-bg);
+    display: flex;
+    justify-content: space-around;
+}
+
+#table-content {
+    width: 85%;
+    border-collapse: collapse;
+}
+
+#table-content tbody {
+    display: flex;
+    flex-direction: column;
+}
+
+tr {
+    background-color: var(--blue-bg);
+    display: flex;
+    color: var(--grey-bg);
+    justify-content: space-around;
+    padding: 8px 10px;
+    margin-left: 9rem;
+}
+*/
+#table-content {
+    width: 72%;
+    border-collapse: collapse;
+    margin-left: 10rem;
+}
+
+#table-content td {
+    padding: 20px;
+}
+
+#table-reqs {
+    background-color: var(--blue-bg);
+    color: var(--grey-bg);
+}
+
+.book-list {
+    border-bottom: 2px dotted var(--blue);
+}
+
+.book-list i {
+    padding: 5px;
+    font-size: 20px;
+}
+
+#table-body i {
+    cursor: pointer;
+}
+
+#table-body .fa-trash {
+    color: var(--red-bg);
+    font-size: 1.3rem;
+}
+
+#table-body .fa-trash:hover {
+    color: var(--red-bg2);
+}
+
+#table-body .fa-times {
+    color: var(--red-bg);
+    font-size: 1.3rem;
+}
+
+#table-body .fa-times:hover {
+    color: var(--red-bg2);
+}
+
+#table-body .fa-check {
+    color: var(--green-bg);
+    font-size: 1.3rem;
+
 }
