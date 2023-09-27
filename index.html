@@ -10,7 +10,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script src="app.js"></script>
 </head>
 
 <body>
@@ -53,44 +52,47 @@
     </form>
   </div>
 
-  <main>
-    <div class="container">
-      <header>
-        <p>BOOKS READ: <span id="books-read"></span></p>
-        <p>BOOKS UNREAD: <span id="books-unread"></span></p>
-        <p>TOTAL BOOKS: <span id="total-books"></span></p>
-        <button id="delete-all" type="button">DELETE ALL</button>
-      </header>
-      <table id="table-content">
-        <thead id="table-reqs">
-          <tr>
-            <td>TITLE</td>
-            <td>AUTHOR</td>
-            <td>PAGES</td>
-            <td>STATUS</td>
-            <td>REMOVE</td>
-          </tr>
-        </thead>
-        <tbody id="table-body">
-          <!--Books generated with JavaScript-->
-        </tbody>
-      </table>
-      <!--Modal-->
-      <div id="modal">
-        <div class="modal-card">
-          <header>
-            <h2>REMOVE ALL BOOKS</h2>
-            <span class="close"><i class="fa-solid fa-xmark"></i></span>
-          </header>
-          <div class="modal-content">
-            <p>Do you really want to remove all books from your library?</p>
+
+  <div class="container">
+    <header class="header">
+      <p>BOOKS READ: <span id="books-read"></span></p>
+      <p>BOOKS UNREAD: <span id="books-unread"></span></p>
+      <p>TOTAL BOOKS: <span id="total-books"></span></p>
+      <button id="delete-all" type="button">DELETE ALL</button>
+    </header>
+    <table id="table-content">
+      <thead id="table-reqs">
+        <tr>
+          <td>TITLE</td>
+          <td>AUTHOR</td>
+          <td>PAGES</td>
+          <td>STATUS</td>
+          <td>REMOVE</td>
+        </tr>
+      </thead>
+      <tbody id="table-body">
+        <!--Books generated with JavaScript-->
+      </tbody>
+    </table>
+    <!--Modal-->
+    <div id="modal">
+      <div class="modal-card">
+        <header>
+          <h2>REMOVE ALL BOOKS</h2>
+          <span class="close"><i class="fa-solid fa-xmark close"></i></span>
+        </header>
+        <div class="modal-content">
+          <p>Do you really want to remove all books from your library?</p>
+
+          <div class="modal-options">
             <button id="cancel">CANCEL</button>
             <button id="confirm">DELETE</button>
           </div>
         </div>
       </div>
     </div>
-  </main>
+  </div>
+  <script src="app.js"></script>
 
 </body>
 
