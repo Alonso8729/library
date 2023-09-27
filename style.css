@@ -326,3 +326,19 @@ tr {
     font-size: 1.3rem;
 
 }
+
+/*FOOTER*/
+footer {
+    color: white;
+    padding: 2rem;
+    position: fixed;
+    bottom: 0;
+}
+
+footer a {
+    text-decoration: none;
+}
+
+footer span {
+    color: #22d3ee;
+}
