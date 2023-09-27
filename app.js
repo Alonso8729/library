@@ -14,10 +14,33 @@ function addToLibrary(name, author, pages, status) {
 }
 
 function showLibrary() {
-
+    showLibraryData();
 }
 
 function showLibraryData() {
+    const readBooks = document.getElementById('books-read')
+    const unreadBooks = document.getElementById('books-unread');
+    const totalBooks = document.getElementById('total-books');
+    let readCounter = 0;
+    let unreadCounter = 0;
+    if (readBooks) {
+        readBooks.textContent = 0;
+    }
+    if (unreadBooks) {
+        unreadBooks.textContent = 0;
+    }
+    for (let i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].status === true) {
+            readCounter++;
+            readBooks.textContent = readCounter;
+        }
+        else if (myLibrary[i].status === false) {
+            unreadCounter++;
+            unreadBooks.textContent = unreadCounter;
+        }
+    }
+    if (totalBooks)
+        totalBooks.textContent = myLibrary.length;
 
 }
 
@@ -45,20 +68,43 @@ function validate(event) {
         pagesError.style.display = 'block';
     else
         pagesError.style.display = 'none'
-    if (titleInput.value !== '' && authorInput.value !== '' && pagesInput.value !== '')
+    if (titleInput.value !== '' && authorInput.value !== '' && pagesInput.value !== '') {
         if (checkbox.checked)
             addToLibrary(titleInput.value, authorInput.value, pagesInput.value, true)
         else
             addToLibrary(titleInput.value, authorInput.value, pagesInput.value, false);
-    form.reset();
+        form.reset();
+    }
+
 }
 
 function handleClicks() {
     document.addEventListener('click', (event) => {
-
-    })
+        const { target } = event;
+        const tr = target.parentNode.parentNode.rowIndex - 1;
+        if (target.id === 'add-book')
+            validate(event);
+        else if (target.id === 'delete-all')
+            handleModal();
+        else if (target.classList.contains('fa-trash'))
+            myLibrary.splice(tr, 1);
+        else if (target.classList.contains('fa-check')) {
+            target.classList.remove('fa-check');
+            target.classList.add('fa-times');
+            myLibrary[tr].status = false;
+        }
+        else if (target.classList.contains('fa-times')) {
+            target.classList.remove('fa-times');
+            target.classList.add('fa-check');
+            myLibrary[tr].status = true;
+        }
+        showLibrary();
+    });
 }
 
 function handleModal() {
 
 }
+
+showLibrary();
+handleClicks();
