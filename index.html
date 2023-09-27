@@ -7,6 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Library</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <script src="app.js"></script>
 </head>
 
@@ -20,14 +23,23 @@
       <div class="form-item text">
         <input type="text" autocomplete="off" name="book-title" id="book-title"
           placeholder="What is the title of the book?" required>
+        <div class="validation-container">
+          <p class="validation-title">Please fill out this field</p>
+        </div>
       </div>
       <div class="form-item text">
         <input type="text" autocomplete="off" name="book-author" id="book-author"
           placeholder="Who is the author of the book?" required>
+        <div class="validation-container">
+          <p class="validation-author">Please fill out this field</p>
+        </div>
       </div>
       <div class="form-item text">
         <input type="text" autocomplete="off" name="page-num" id="page-num"
           placeholder="How many pages are in the book?" required>
+        <div class="validation-container">
+          <p class="validation-pages">Please enter a number larger than 0</p>
+        </div>
       </div>
       <div class="form-item checkbox">
         <span>
@@ -49,6 +61,34 @@
         <p>TOTAL BOOKS: <span id="total-books"></span></p>
         <button id="delete-all" type="button">DELETE ALL</button>
       </header>
+      <table id="table-content">
+        <thead id="table-reqs">
+          <tr>
+            <td>TITLE</td>
+            <td>AUTHOR</td>
+            <td>PAGES</td>
+            <td>STATUS</td>
+            <td>REMOVE</td>
+          </tr>
+        </thead>
+        <tbody id="table-body">
+          <!--Books generated with JavaScript-->
+        </tbody>
+      </table>
+      <!--Modal-->
+      <div id="modal">
+        <div class="modal-card">
+          <header>
+            <h2>REMOVE ALL BOOKS</h2>
+            <span class="close"><i class="fa-solid fa-xmark"></i></span>
+          </header>
+          <div class="modal-content">
+            <p>Do you really want to remove all books from your library?</p>
+            <button id="cancel">CANCEL</button>
+            <button id="confirm">DELETE</button>
+          </div>
+        </div>
+      </div>
     </div>
   </main>
 
