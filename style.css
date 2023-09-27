@@ -2,11 +2,13 @@
 
 :root {
     --grey-bg: #e8eaee;
+    --grey-bg2: #a3a5a9;
     --transperent: rgba(0, 0, 0, 0.2);
     --transperent2: rgba(0, 0, 0, 0.5);
     --red-bg: rgba(217, 12, 39, 0.85);
     --red-bg2: rgba(217, 12, 39, 1);
     --blue-bg: #2e294e;
+    --orange-bg: rgb(236, 155, 4);
     font-family: 'Montserrat', sans-serif;
     font-family: 'Open Sans', sans-serif;
     font-family: 'Roboto', sans-serif;
@@ -55,7 +57,7 @@ body {
 }
 
 .side h1 {
-    margin-left: 1.5em;
+    margin-left: 1em;
     font-size: 3rem;
     color: var(--grey-bg);
 }
@@ -72,10 +74,7 @@ form {
     margin-top: 2rem;
 }
 
-.form-item text input:valid+span.placeholder,
-.form-item text input:focus+span.placeholder {
-    transform: scale(0.8) translateY(-30px);
-}
+
 
 .form-item input {
     background-color: rgba(0, 0, 0, 0);
@@ -88,11 +87,15 @@ input[type="text"] {
     color: white;
 }
 
-
-
 input[type="text"]:focus {
     outline: none;
     border-bottom: 3px dotted white;
+}
+
+.validation-container p {
+    color: var(--orange-bg);
+    font-size: 0.9rem;
+    display: none;
 }
 
 .form-item.checkbox {
@@ -109,7 +112,7 @@ input[type="checkbox"] {
 }
 
 input[type="text"]::placeholder {
-    color: var(--grey-bg);
+    color: var(--grey-bg2);
 }
 
 #add-book {
@@ -127,6 +130,8 @@ input[type="text"]::placeholder {
 #add-book:hover {
     background-color: var(--transperent2);
 }
+
+
 
 /*main*/
 
