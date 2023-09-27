@@ -1,4 +1,4 @@
-const myLibrary = [];
+let myLibrary = [];
 
 function Book(name, author, pages, status) {
     this.name = name;
@@ -103,7 +103,18 @@ function handleClicks() {
 }
 
 function handleModal() {
+    const modal = document.querySelector('#modal');
+    modal.style.display = 'block'
+    modal.addEventListener('click', (event) => {
+        const { target } = event;
+        if (target.id === 'cancel' || target.classList.contains('close'))
+            modal.style.display = 'none';
+        else if (target.id === 'confirm') {
+            myLibrary = [];
+            modal.style.display = 'none';
+        }
 
+    })
 }
 
 showLibrary();
