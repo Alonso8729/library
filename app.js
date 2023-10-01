@@ -101,11 +101,11 @@ function validate(event) {
         authorError.style.display = 'block';
     else
         authorError.style.display = 'none';
-    if (pagesInput.value === '' || pagesInput.value.match(/[^1-9]/) || pagesInput.value <= 0)
+    if (pagesInput.value === '' || /[^\d]/.test(pagesInput.value) || pagesInput.value <= 0)
         pagesError.style.display = 'block';
     else
         pagesError.style.display = 'none'
-    if (titleInput.value !== '' && authorInput.value !== '' && pagesInput.value !== '') {
+    if (titleInput.value !== '' && authorInput.value !== '' && pagesInput.value !== '' && pagesError.style.display === 'none') {
         if (checkbox.checked)
             addToLibrary(titleInput.value, authorInput.value, pagesInput.value, true)
         else
